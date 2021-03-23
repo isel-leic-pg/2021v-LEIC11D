@@ -1,0 +1,23 @@
+ Volume in drive D is DATA
+ Volume Serial Number is BC55-6F91
+
+ Directory of D:\Aulas\PG\21-21\LI11D\RepoCode
+
+03/23/2021  04:08 PM    <DIR>          .
+03/23/2021  04:08 PM    <DIR>          ..
+03/11/2021  01:08 PM               301 .gitignore
+03/23/2021  04:11 PM                 0 abc.txt
+03/23/2021  03:49 PM    <DIR>          META-INF
+03/23/2021  03:55 PM                64 Output.kt
+03/23/2021  04:02 PM               128 Output2.kt
+03/23/2021  04:03 PM               865 Output2Kt.class
+03/23/2021  04:06 PM                93 Output3.kt
+03/23/2021  04:07 PM               690 Output3Kt.class
+03/23/2021  03:53 PM               842 OutputKt.class
+03/11/2021  01:08 PM               112 README.md
+               9 File(s)          3,095 bytes
+               3 Dir(s)  901,279,850,496 bytes free
+Texto
+30
+A
+22.4
