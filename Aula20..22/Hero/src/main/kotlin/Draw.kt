@@ -1,6 +1,11 @@
 import pt.isel.canvas.Canvas
 import pt.isel.canvas.WHITE
 
+/**
+ * Draws the entire arena of the game: Grid, Hero and Robots
+ * @receiver where it will be drawn
+ * @param game All game information
+ */
 fun Canvas.drawArena(game: Game) {
     erase()
     drawGrid()
@@ -10,6 +15,13 @@ fun Canvas.drawArena(game: Game) {
     }
 }
 
+/**
+ * Draw an actor.
+ * @receiver where it will be drawn
+ * @param actor Actor to be drawn
+ * @param stepAnim Animation step between two grid cells (0->final position)
+ * @param pngName File with images of the actor
+ */
 fun Canvas.drawActor(actor: Actor, stepAnim: Int, pngName:String) {
     val x = actor.position.x * CELL_SIDE - stepAnim * actor.motion.dx()
     val y = actor.position.y * CELL_SIDE - stepAnim * actor.motion.dy()
@@ -23,6 +35,10 @@ fun Canvas.drawActor(actor: Actor, stepAnim: Int, pngName:String) {
     drawImage("$pngName|$xImg,$yImg,$SPRITE_DIV,$SPRITE_DIV", x, y, CELL_SIDE, CELL_SIDE)
 }
 
+/**
+ * Draw the background grid.
+ * @receiver where it will be drawn
+ */
 fun Canvas.drawGrid() {
     (CELL_SIDE..height step CELL_SIDE).forEach {
         drawLine(0, it, width, it, WHITE, 1) // horizontal
