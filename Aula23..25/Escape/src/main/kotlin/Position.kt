@@ -22,8 +22,18 @@ operator fun Position.plus( dir:Direction ) =
 fun Position.isValid(xSize:Int, ySize:Int) =
     x in 0 until xSize && y in 0 until ySize
 
+/**
+ * Represents a displacement in two-dimensional space.
+ * @property dx displacement value on the x axis
+ * @property dy displacement value on the y axis
+ */
 data class Motion(val dx:Int, val dy:Int)
 
+/**
+ * Calculates the difference between two positions.
+ * @receiver Subtraction left argument
+ * @param other Subtraction right argument
+ */
 operator fun Position.minus( other:Position ) = Motion(x-other.x, y-other.y)
 
 

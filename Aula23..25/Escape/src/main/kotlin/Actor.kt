@@ -26,9 +26,8 @@ fun Actor.jump( others:List<Actor> ) = Actor(
     motion = null
 )
 
-fun List<Actor>.moveTo(target:Position ) :List<Actor> {
-    return map{ actor ->
+fun List<Actor>.moveTo(target:Position ) :List<Actor> =
+    map{ actor ->
         val dir = (target - actor.position).toDirection()
         Actor( actor.position + dir , dir )
     }
-}
