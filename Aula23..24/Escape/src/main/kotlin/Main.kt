@@ -12,11 +12,9 @@ fun main() {
             game = game.move(ke)
             cv.drawArena(game)
         }
-        cv.onTimeProgress(500) {
-            if (game.stepAnim > 0) { // está em movimento
-                game = game.copy(stepAnim = game.stepAnim - CELL_SIDE / ANIM_STEPS)
-                cv.drawArena(game)
-            }
+        cv.onTimeProgress(50) {
+            game = game.step()
+            cv.drawArena(game)
         }
     }
     onFinish { }

@@ -13,6 +13,9 @@ fun Canvas.drawArena(game: Game) {
     game.robots.forEach {
         drawActor( it , game.stepAnim, "robot.png")
     }
+    game.garbage.forEach { pos ->
+        drawJunk(pos)
+    }
 }
 
 /**
@@ -39,11 +42,15 @@ private fun Canvas.drawActor(actor: Actor, stepAnim: Int, pngName:String) {
  * Draw the background grid.
  * @receiver where it will be drawn
  */
-fun Canvas.drawGrid() {
+private fun Canvas.drawGrid() {
     (CELL_SIDE..height step CELL_SIDE).forEach {
         drawLine(0, it, width, it, WHITE, 1) // horizontal
     }
     (CELL_SIDE..width step CELL_SIDE).forEach {
         drawLine(it, 0, it, height, WHITE, 1) // vertical
     }
+}
+
+private fun Canvas.drawJunk(junk:Position) {
+    drawImage("junk", junk.x*CELL_SIDE, junk.y*CELL_SIDE, CELL_SIDE, CELL_SIDE)
 }
