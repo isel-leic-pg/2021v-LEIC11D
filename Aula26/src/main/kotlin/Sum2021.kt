@@ -8,9 +8,29 @@ fun findTwoNumbersSum2021(ns:List<Int>) :ResultFind? {
     return null
 }
 
+
+fun List<Int>.findTwoNumbers( condition : (Int,Int)->Boolean ) :Pair<Int,Int>? {
+    for(idx1 in 0 .. size-2) {
+        val n1 = get(idx1)
+        for (idx2 in idx1+1 until size) {
+            val n2 = get(idx2)
+            if (condition(n1, n2))
+                return Pair(n1, n2)
+        }
+    }
+    return null
+}
+
+const val SUM = 2021
+
 fun main() {
     val numbers = readLines().map { it.toInt() }
-       findTwoNumbersSum2021(numbers)
+    //val result = findTwoNumbersSum2021(numbers)
+    val result = numbers.findTwoNumbers{ a,b -> a+b==SUM }
+    if (result != null) {
+        val (a,b) = result
+        println("$a + $b == $SUM")
+    }
 
     /*
     var done = false
